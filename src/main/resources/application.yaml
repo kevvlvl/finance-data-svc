@@ -1,0 +1,14 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.FloatSerializer
+      value-serializer: org.apache.kafka.common.serialization.FloatSerializer
+
+logging:
+  level:
+    ROOT:
+      info
+
+server:
+  port: 8090
