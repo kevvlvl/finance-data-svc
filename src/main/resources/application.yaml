@@ -2,8 +2,7 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     producer:
-      key-serializer: org.apache.kafka.common.serialization.FloatSerializer
-      value-serializer: org.apache.kafka.common.serialization.FloatSerializer
+      value-serializer: com.kevvlvl.financedatasvc.serializer.StockSerializer
 
 logging:
   level:

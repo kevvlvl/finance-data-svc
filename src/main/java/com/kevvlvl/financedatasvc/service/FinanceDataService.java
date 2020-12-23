@@ -1,8 +1,8 @@
 package com.kevvlvl.financedatasvc.service;
 
-import java.math.BigDecimal;
+import com.kevvlvl.financedatasvc.dto.StockDto;
 
 public interface FinanceDataService {
 
-    float getLatestData();
+    StockDto getLatestData();
 }
