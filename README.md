@@ -3,6 +3,8 @@
 The following service is part of the "Live Finance Demo".
 It is a simple Spring REST reactive service that produces a new stock value to kafka and returns it
 
+![app-diagram](live-finance-demo.png)
+
 The other service "Finance-API" consumes this data, stores it in a DB for historical purposes and serves the client requests for latest and historical stock values
 
 ## How-To
