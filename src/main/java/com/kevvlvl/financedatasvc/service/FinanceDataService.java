@@ -4,5 +4,5 @@ import com.kevvlvl.financedatasvc.dto.StockDto;
 
 public interface FinanceDataService {
 
-    StockDto getLatestData();
+    StockDto getLatestData(String stockName);
 }

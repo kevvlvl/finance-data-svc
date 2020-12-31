@@ -9,6 +9,8 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import java.util.Optional;
+
 @Component
 public class FinanceDataHandler {
 
@@ -21,7 +23,9 @@ public class FinanceDataHandler {
 
     public Mono<ServerResponse> data(ServerRequest request) {
 
+        Optional<String> stockName = request.queryParam("stockName");
+
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON)
-                .body(BodyInserters.fromValue(service.getLatestData()));
+                .body(BodyInserters.fromValue(service.getLatestData(stockName.orElseThrow())));
     }
 }

@@ -24,13 +24,12 @@ public class FinanceDataServiceImpl implements FinanceDataService {
     }
 
     @Override
-    public StockDto getLatestData() {
+    public StockDto getLatestData(String stockName) {
 
         Random r = new Random();
         BigDecimal stockValue = BigDecimal.valueOf(r.nextDouble() * (80 - 60));
 
-        // TODO: do not hardcode param name
-        StockDto stock = new StockDto("FAKESTOCK.Z", stockValue);
+        StockDto stock = new StockDto(stockName, stockValue);
 
         this.kafkaTemplate.send(TOPIC_STOCKS, stock);
 
